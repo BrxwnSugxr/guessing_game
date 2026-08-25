@@ -145,15 +145,32 @@ header p{
 /* ------------------------------
    Statistics
    ------------------------------ */
-   
+   .win,.lose{
+    line-height: 1;
+   }
+   .win{
+    color:#198754;
+   }
+   .lose{
+    color: #dc3545;
+   }
  /* ------------------------------
    Timer
    ------------------------------ */
-   
+   .timer-count{
+    line-height: 1;
+    font-variant-numeric: tabular-nums;
+   }
 /* ------------------------------
    Game Status
    ------------------------------ */
-   
+   .game-status{
+    min-height: 48px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-bottom: 1.5rem;
+   }
 /* ------------------------------
    Responsive Adjustments
    ------------------------------ */
