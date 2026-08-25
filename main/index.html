@@ -17,8 +17,11 @@
   <body class="bg-light">
     <!-- created a header -->
     <header class="bg-dark text-white text-center py-5">
-      <h1 class="display-3">Word Guess Game</h1>
-      <button class="btn btn-warning btn-lg mt-3 start-button">Start</button>
+      <div class="container">
+        <h1 class="display-3 fw-bold">Word Guess Game</h1>
+        <p class="lead mb-4">Test Your Skills</p>
+        <button class="btn btn-warning btn-lg mt-3 start-button">Start</button>
+      </div>
     </header>
 
     <!-- main Game -->
@@ -26,38 +29,50 @@
       <div class="row g-4">
         <!-- word guess card -->
         <section class="col-12 col-lg-7">
-          <div class="card shadow h-100">
+          <div class="card shadow-sm h-100">
             <div
-              class="card-body d-flex justify-content-center align-items-center"
+              class="card-body d-flex flex-coliumn justify-content-center align-items-center"
               style="min-height: 400px"
             >
-              <h2 class="display-4 word-blanks">J _ v _ S c r _ _ t</h2>
+              <h2 class="display-4 fw-bold word-blanks mb-4">
+                J _ v _ S c r _ _ t
+              </h2>
+              <p>Type a letter to guess</p>
             </div>
           </div>
         </section>
 
-        <!-- Results card -->
+        <!-- Start Game/Results card -->
         <section class="col-12 col-lg-5">
           <div class="card shadow h-100">
             <div class="card-body">
+              <h2 class="h4 fw-bold mb-4">Game Stats</h2>
               <!-- wins and losses -->
-              <div
-                class="d-flex justify-content-between align-items-center mb-4"
-              >
-                <div>
-                  <h2>
-                    Wins:
-                    <span class="win">0</span>
-                  </h2>
-                  <h2>
-                    Losses:
-                    <span class="lose">0</span>
-                  </h2>
+
+              <div class="row g-3 mb-4">
+                <div class="col-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <small class="text-secondary"> WINS </small>
+                    <div class="display-6 fw-bold win">0</div>
+                  </div>
+                  </div>
                 </div>
-                <button class="btn btn-outline-danger reset-button">
-                  Reset Score
-                </button>
-              </div>
+
+                <div class="col-6">
+                <div class="card text-center">
+                  <div class="card-body">
+                    <small class="text-secondary"> LOSSES </small>
+                    <div class="display-6 fw-bold win">0</div>
+                  </div>
+                  </div>
+                </div>
+                </div>
+                
+
+
+           
+              
               <!-- Timer -->
               <div class="btn bg-dark text-white text-center">
                 <div class="card-body py-5">
@@ -66,10 +81,12 @@
                 </div>
               </div>
             </div>
+            </div>
           </div>
         </section>
       </div>
     </main>
+    
 
     <!-- JS -->
     <script src="assets/js/script.js"></script>
