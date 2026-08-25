@@ -22,7 +22,12 @@ The user interface was developed using Bootstrap to create a responsive layout w
   - [Timed Gameplay](#timed-gameplay)
   - [Keyboard Input](#keyboard-input)
   - [Letter Matching](#letter-matching)
+  - [Win and Loss Tracking](#win-and-loss-tracking)
+  - [Reset Score](#reset-score)
   - [Responsive UI](#responsive-ui)
+- [Technologies Used](#technologies-used)
+- [Output](#output)
+- [Installation](#installation)
 
 ## User Story
 AS A user
@@ -89,8 +94,9 @@ _ _ _ _ _ _ _ _
 After correctly guessing a:
 
 _ a _ _ _ _ _ _
+```text
 
-Win and Loss Tracking
+### Win and Loss Tracking
 
 The application tracks the number of games won and lost.
 
@@ -98,7 +104,7 @@ Persistent Scores
 
 Win and loss scores are stored using browser localStorage, allowing the scores to remain available after refreshing the page.
 
-Reset Score
+### Reset Score
 
 The player can reset their accumulated wins and losses back to zero.
 
@@ -106,7 +112,7 @@ The player can reset their accumulated wins and losses back to zero.
 
 Bootstrap's responsive grid system is used to ensure the application works across desktop, tablet, and mobile screen sizes.
 
-Technologies Used
+## Technologies Used
 HTML5
 CSS3
 Bootstrap 5
@@ -140,7 +146,7 @@ Application state
 Browser localStorage
 Video
 
-Output
+## Output
 
 When the application loads, the player is presented with the Word Guess Game interface.
 
@@ -168,7 +174,7 @@ The win and loss scores are stored using localStorage, allowing the scores to pe
 
 The Reset Score button allows the player to return both scores to zero.
 
-Installation
+## Installation
 
 Clone the repository:
 
