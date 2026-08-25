@@ -134,7 +134,14 @@ header p{
 /* ------------------------------
    Word Guess Area
    ------------------------------ */
-   
+   .word-blanks-container {
+    min-height: 400px;
+   }
+   .word-blanks{
+    letter-spacing: 0.2em;
+    font-size:clamp(2rem, 5vw, 3.5rem);
+    user-select: none;
+   }
 /* ------------------------------
    Statistics
    ------------------------------ */
