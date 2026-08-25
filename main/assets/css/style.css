@@ -77,11 +77,12 @@ header{
 }
 
 header h1{
-
+    font-size: clamp(2rem,5vw, 3.5rem);
+    letter-spacing: -0.03em;
 }
 
 header p{
-    
+    color: rgba(0, 0, 0, 0.75);
 }
 
 /* ------------------------------
