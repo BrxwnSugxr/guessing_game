@@ -56,7 +56,10 @@ function startGame() {
   timerCount = 10;
 
   startButton.disabled = true;
+
   timerElement.textContent = timerCount;
+  gameStatus.textContent = "Guess a letter!";
+  gameStatus.className = "alert alert-secondary text-center game-status";
 
   renderBlanks();
 
@@ -67,39 +70,42 @@ function startGame() {
 // ------------------------------
 function renderBlanks() {
   const randomIndex = Math.floor(Math.random() * words.length);
-  words.length = 7;
   chosenWord = words[randomIndex];
   blanksLetter = [];
 
   for (let i = 0; i < chosenWord.length; i++) {
     blanksLetter.push("_");
-    wordBlank.textContent = blanksLetter.join(" ");
   }
+  wordBlank.textContent = blanksLetter.join(" ");
 }
 // ------------------------------
 // Timer
 // ------------------------------
 function startTimer() {
-  setInterval();
   timer = setInterval(() => {
-    clearInterval(timer);
     timerCount--;
+
     timerElement.textContent = timerCount;
+
     if (timerCount <= 0) {
       loseGame();
     }
-  });
+  }, 1000);
 }
 // ------------------------------
 // Win Game
 // ------------------------------
 function winGame() {
-  checkWin();
   clearInterval(timer);
   gameActive = false;
   winCounter++;
   wordBlank.textContent = "YOU WON! ";
+
+  gameStatus.textContent = "Great job! you guessed the word.";
+  gameStatus.className = "alert alert-success text-center game-status";
+
   startButton.disabled = false;
+
   saveScores();
   updateScoreDisplay();
 }
@@ -107,33 +113,46 @@ function winGame() {
 // Lose Game
 // ------------------------------
 function loseGame() {
-  let letterFound = false;
-  for (let i = 0; i < chosenWord.length; i++) {
-    if (chosenWord[i] === letter) {
-      blanksLetter[i] = letter;
-      wordBlank.textContent = blanksLetter.join(" ");
-    }
-  }
+  clearInterval(timer);
+  gameActive = false;
   loseCounter++;
+
   wordBlank.textContent = `GAME OVER - The word was "${chosenWord}".`;
+
+  gameStatus.textContent = "Time's up!";
+  gameStatus.className = "alert alert-danger text0center game-status";
+  startButton.disabled = false;
+  saveScores();
+  updateScoreDisplay();
 }
 // ------------------------------
 // Check Letter
 // ------------------------------
-function checkLetters(letter) {}
+function checkLetters(letter) {
+  let letterFound = false;
+  for (let i = 0; i < chosenWord.length; i++) {
+    if (chosenWord[i] === letter) {
+      blanksLetter[i] = letter;
+      letterFound = true;
+    }
+  }
+  if (letterFound) {
+    wordBlank.textContent = blanksLetter.join(" ");
+  }
+  return letterFound;
+}
 // ------------------------------
 // Check Win Condition
 // ------------------------------
 function checkWin() {
-  blanksLetter.join("");
   chosenWord === blanksLetter.join("");
 }
 // ------------------------------
 // Score Management
 // ------------------------------
 function saveScores() {
-  localStorage.setItem("winCount", winCounter);
-  localStorage.setItem("loseCounter", loseCounter);
+  localStorage.setItem("winCount", winCounter) || 0;
+  localStorage.setItem("loseCounter", loseCounter) || 0;
 }
 function loadScores() {
   localStorage.getItem("winCount");
@@ -149,16 +168,35 @@ function updateScoreDisplay() {
 function resetGame() {
   winCounter = 0;
   loseCounter = 0;
+
   saveScores();
   updateScoreDisplay();
+
+  gameStatus.textContent = "Score reset!";
+  gameStatus.className = "alert alert-secondary text-center game-status";
 }
 // ------------------------------
 // Keyboard Input
 // ------------------------------
+document.addEventListener("keydown", (event) => {
+  if (!gameActive) {
+    return;
+  }
+  const letterGuessed = event.key.toLowerCase();
+  if (!/^[a-z]$/i.test(letterGuessed)) {
+    return;
+  }
+  checkLetters(letterGuessed);
 
+  if (checkWin()) {
+    winGame();
+  }
+});
 // ------------------------------
 // Event Listeners
 // ------------------------------
+startButton.addEventListener("click", startGame);
+resetButton.addEventListener("click", resetGame);
 
 // ------------------------------
 // Start Application
