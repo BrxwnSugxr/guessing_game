@@ -26,8 +26,10 @@ The user interface was developed using Bootstrap to create a responsive layout w
   - [Reset Score](#reset-score)
   - [Responsive UI](#responsive-ui)
 - [Technologies Used](#technologies-used)
+  - [JavaScript Concepts Practised](#javascript-concepts-practised)
 - [Output](#output)
 - [Installation](#installation)
+- [Future Improvements](#future-improvements)
 
 ## User Story
 AS A user
@@ -94,15 +96,12 @@ _ _ _ _ _ _ _ _
 After correctly guessing a:
 
 _ a _ _ _ _ _ _
-```text
+```
 
 ### Win and Loss Tracking
 
-The application tracks the number of games won and lost.
-
-Persistent Scores
-
-Win and loss scores are stored using browser localStorage, allowing the scores to remain available after refreshing the page.
+* The application tracks the number of games won and lost.
+* **Persistent Scores:** Win and loss scores are stored using browser localStorage, allowing the scores to remain available after refreshing the page.
 
 ### Reset Score
 
@@ -113,38 +112,29 @@ The player can reset their accumulated wins and losses back to zero.
 Bootstrap's responsive grid system is used to ensure the application works across desktop, tablet, and mobile screen sizes.
 
 ## Technologies Used
-HTML5
-CSS3
-Bootstrap 5
-JavaScript
-Browser Web APIs
-localStorage
-JavaScript Concepts
+* HTML5
+* CSS3
+* Bootstrap 5
+* JavaScript
+* Browser Web APIs
+* localStorage
+
+### JavaScript Concepts Practised
 
 This project was built to practise and demonstrate several core JavaScript concepts:
 
-Variables
-const and let
-Arrays
-Array methods
-for loops
-Functions
-Function parameters
-Return values
-Conditional statements
-Comparison operators
-DOM selection
-DOM manipulation
-Template literals
-Event listeners
-Keyboard events
-setInterval()
-clearInterval()
-Random number generation
-Regular expressions
-Application state
-Browser localStorage
-Video
+* Variables (`const` and `let`)
+* Arrays and Array methods
+* `for` loops
+* Functions, parameters, and return values
+* Conditional statements and comparison operators
+* DOM selection and manipulation
+* Template literals
+* Event listeners (Keyboard events)
+* Timers (`setInterval()` and `clearInterval()`)
+* Random number generation
+* Regular expressions
+* Application state
 
 ## Output
 
@@ -158,11 +148,13 @@ The player then enters letters using their keyboard.
 
 If the selected letter exists within the word, the corresponding blank spaces are replaced with the correctly guessed letter.
 
+```text
 _ _ _ _ _ _ _ _
 
 After correctly guessing letters:
 
 v a r _ a b l e
+```
 
 If all letters are correctly identified before the timer reaches zero, the player wins the round.
 
@@ -178,29 +170,33 @@ The Reset Score button allows the player to return both scores to zero.
 
 Clone the repository:
 
+```bash
 git clone YOUR-REPOSITORY-URL
+```
 
 Navigate to the project directory:
 
+```bash
 cd word-guess-game
+```
 
-Open index.html in your browser.
+Open `index.html` in your browser.
 
 Alternatively, the application can be deployed using GitHub Pages.
 
-Future Improvements
+## Future Improvements
 
 Potential future improvements include:
 
-Adding a larger word database
-Connecting the game to a words API
-Adding difficulty levels
-Increasing or decreasing the timer based on difficulty
-Tracking previously guessed letters
-Preventing duplicate guesses
-Adding visual feedback for correct and incorrect guesses
-Adding sound effects
-Adding animations
-Adding a high-score system
-Adding additional game modes
-Combining the game with other JavaScript challenges into a larger Brain Teaser application
+* Adding a larger word database
+* Connecting the game to a words API
+* Adding difficulty levels
+* Increasing or decreasing the timer based on difficulty
+* Tracking previously guessed letters
+* Preventing duplicate guesses
+* Adding visual feedback for correct and incorrect guesses
+* Adding sound effects
+* Adding animations
+* Adding a high-score system
+* Adding additional game modes
+* Combining the game with other JavaScript challenges into a larger Brain Teaser application
