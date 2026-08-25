@@ -39,11 +39,26 @@ const words = [
 // ------------------------------
 // Initialise Game
 // ------------------------------
-function init() {}
+function init() {
+  loadScores();
+  updateScoreDisplay();
+
+  timerElement.textContent = textContent;
+  gameStatus.textContent = "Press Start to begin!";
+}
 // ------------------------------
 // Start Game
 // ------------------------------
-function startGame() {}
+function startGame() {
+  clearInterval(timer);
+  gameActive = true;
+  timerCount = 10;
+  startButton.disabled = true;
+  timerElement.textContent = timerCount;
+  renderBlanks();
+
+  startTimer();
+}
 // ------------------------------
 // Select Random Word
 // ------------------------------
