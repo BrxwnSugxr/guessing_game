@@ -9,17 +9,14 @@
 
 :root {
   --color-primary: #ffc107;
-  --color-primary-dark: #e0a800;
-
   --color-dark: #212529;
   --color-background: #f8f9fa;
-  --color-surface: #ffffff;
   --color-text: #212529;
-  --color-muted: #6c757d;
+  --color-success: #198754;
+  --color-danger: #dc3545;
 
-  --radius-sm: 0.5rem;
+
   --radius-md: 0.75rem;
-  --radius-lg: 1rem;
 
   --shadow-sm: 0 0.125rem 0.25rem rgba(0, 0, 0, 0.075);
   --shadow-md: 0 0.5rem 1.5rem rgba(0, 0, 0, 0.1);
@@ -27,13 +24,6 @@
   --transition-fast: 150ms ease-in-out;
   --transition-normal: 250ms ease-in-out;
 }
-
-
-
-
-
-
-
 
    /* ------------------------------
    Global
@@ -64,7 +54,7 @@ body {
 /* ------------------------------
    Text Selection
    ------------------------------ */
- ::selection{
+ ::selection { 
     background-color: var(--color-primary);
     color: var(--color-dark);
 }
@@ -82,7 +72,7 @@ header h1{
 }
 
 header p{
-    color: rgba(0, 0, 0, 0.75);
+    color: rgba(255, 255, 255, 0.75);
 }
 
 /* ------------------------------
@@ -90,7 +80,7 @@ header p{
    ------------------------------ */
 
    .start-button, .reset-button {
-    transition: 
+        transition: 
         transform var(--transition-fast),
         box-shadow var(--transition-fast);
     
@@ -98,32 +88,32 @@ header p{
 
    .start-button:hover,
    .reset-button:hover{
-    transform: translateY(-2px);
-    box-shadow: var(--shadow-sm);
+        transform: translateY(-2px);
+        box-shadow: var(--shadow-sm);
    }
 
    .start-button:active,
    .reset-button:active {
-    transform: translateY(0);
+        transform: translateY(0);
    }
 
    /* keyboard accessiblitlity */
    .start-button:focus-visible,
    .reset-button:focus-visible {
-    outline: 3px solid var(--color-primary);
-    outline-offset: 3px;
+        outline: 3px solid var(--color-primary);
+        outline-offset: 3px;
    }
 
 /* ------------------------------
    Game Cards
    ------------------------------ */
-   .card
-{
-    border-radius:var(--radius-md)
+   .card{
+    border-radius: var(--radius-md);
 }
-.card.shadow-sm{
-    transition: transform var(--transition-normal);
-    box-shadow: var(--transition-normal);
+.card.shadow-sm {
+    transition: 
+    transform var(--transition-normal),
+    box-shadow var(--transition-normal);
 }
 
 .card.shadow-sm:hover{
@@ -149,10 +139,10 @@ header p{
     line-height: 1;
    }
    .win{
-    color:#198754;
+    color:var(--color-success);
    }
    .lose{
-    color: #dc3545;
+    color: var(--color-danger);
    }
  /* ------------------------------
    Timer
