@@ -64,12 +64,25 @@ body {
 /* ------------------------------
    Text Selection
    ------------------------------ */
-
+ ::selection{
+    background-color: var(--color-primary);
+    color: var(--color-dark);
+}
 
 /* ------------------------------
    Header
    ------------------------------ */
+header{
+    border-bottom: 4px solid var(--color-primary);
+}
 
+header h1{
+
+}
+
+header p{
+    
+}
 
 /* ------------------------------
    Buttons
