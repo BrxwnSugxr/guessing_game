@@ -174,7 +174,27 @@ header p{
 /* ------------------------------
    Responsive Adjustments
    ------------------------------ */
-   
+   @media (max-width: 576px) {
+  .word-blanks-container {
+    min-height: 300px;
+  }
+
+  .word-blanks {
+    letter-spacing: 0.1em;
+  }
+}
 /* ------------------------------
    Reduced Motion Accessibility
    ------------------------------ */   
+   @media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
