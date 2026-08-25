@@ -1,0 +1,44 @@
+/* ==================================================
+   Word Guess Game - Custom Styles
+   Bootstrap handles the main layout and components.
+   ================================================== */
+
+/* ------------------------------
+   Design Tokens
+   ------------------------------ */
+
+
+
+
+
+
+
+
+
+
+   /* ------------------------------
+   Global
+   ------------------------------ */
+
+
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-height: 100vh;
+  font-family:
+    system-ui,
+    -apple-system,
+    BlinkMacSystemFont,
+    "Segoe UI",
+    sans-serif;
+
+  background-color: var(--color-background);
+  color: var(--color-text);
+}
