@@ -31,7 +31,7 @@
         <section class="col-12 col-lg-7">
           <div class="card shadow-sm h-100">
             <div
-              class="card-body d-flex flex-coliumn justify-content-center align-items-center"
+              class="card-body d-flex flex-column justify-content-center align-items-center"
               style="min-height: 400px"
             >
               <h2 class="display-4 fw-bold word-blanks mb-4">
@@ -51,59 +51,49 @@
 
               <div class="row g-3 mb-4">
                 <div class="col-6">
-                <div class="card text-center">
-                  <div class="card-body">
-                    <small class="text-secondary"> WINS </small>
-                    <div class="display-6 fw-bold win">0</div>
-                  </div>
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <small class="text-secondary"> WINS </small>
+                      <div class="display-6 fw-bold win">0</div>
+                    </div>
                   </div>
                 </div>
 
                 <div class="col-6">
-                <div class="card text-center">
-                  <div class="card-body">
-                    <small class="text-secondary"> LOSSES </small>
-                    <div class="display-6 fw-bold win">0</div>
-                  </div>
+                  <div class="card text-center">
+                    <div class="card-body">
+                      <small class="text-secondary"> LOSSES </small>
+                      <div class="display-6 fw-bold lose">0</div>
+                    </div>
                   </div>
                 </div>
-                </div>
-                
+              </div>
 
-
-           
-              
               <!-- Timer -->
-              <div class="btn bg-dark text-white text-center mb-4">
+              <div class="card bg-dark text-white text-center mb-4">
                 <div class="card-body py-5">
-                    <small class="text-uppercase">
-                        Time Left
-                    </small>
+                  <small class="text-uppercase"> Time Left </small>
                   <div class="display-1 fw-bold timer-count">10</div>
                   <p class="mb-0">Seconds remaining</p>
                 </div>
               </div>
-            
+
               <!-- game stauts -->
-               <div class="alert alert-secondary text-center game-status">
+              <div class="alert alert-secondary text-center game-status">
                 Guess a letter to begin.
-               </div>
+              </div>
 
-               <!-- reset -->
-                <div class="text-center">
-                    <button class="btn btn-outline-danger reset-button">
-                        Reset Score
-                    </button>
-                </div>
-
-
+              <!-- reset -->
+              <div class="text-center">
+                <button class="btn btn-outline-danger reset-button">
+                  Reset Score
+                </button>
+              </div>
             </div>
-            </div>
-        </section>
           </div>
+        </section>
       </div>
     </main>
-    
 
     <!-- JS -->
     <script src="assets/js/script.js"></script>
