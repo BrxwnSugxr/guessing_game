@@ -22,6 +22,7 @@ The user interface was developed using Bootstrap to create a responsive layout w
   - [Timed Gameplay](#timed-gameplay)
   - [Keyboard Input](#keyboard-input)
   - [Letter Matching](#letter-matching)
+  - [Responsive UI](#responsive-ui)
 
 ## User Story
 AS A user
@@ -101,7 +102,7 @@ Reset Score
 
 The player can reset their accumulated wins and losses back to zero.
 
-Responsive UI
+### Responsive UI
 
 Bootstrap's responsive grid system is used to ensure the application works across desktop, tablet, and mobile screen sizes.
 
