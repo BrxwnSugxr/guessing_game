@@ -93,11 +93,30 @@ function startTimer() {
 // ------------------------------
 // Win Game
 // ------------------------------
-function winGame() {}
+function winGame() {
+  checkWin();
+  clearInterval(timer);
+  gameActive = false;
+  winCounter++;
+  wordBlank.textContent = "YOU WON! ";
+  startButton.disabled = false;
+  saveScores();
+  updateScoreDisplay();
+}
 // ------------------------------
 // Lose Game
 // ------------------------------
-function loseGame() {}
+function loseGame() {
+  let letterFound = false;
+  for (let i = 0; i < chosenWord.length; i++) {
+    if (chosenWord[i] === letter) {
+      blanksLetter[i] = letter;
+      wordBlank.textContent = blanksLetter.join(" ");
+    }
+  }
+  loseCounter++;
+  wordBlank.textContent = `GAME OVER - The word was "${chosenWord}".`;
+}
 // ------------------------------
 // Check Letter
 // ------------------------------
@@ -105,18 +124,34 @@ function checkLetters(letter) {}
 // ------------------------------
 // Check Win Condition
 // ------------------------------
-function checkWin() {}
+function checkWin() {
+  blanksLetter.join("");
+  chosenWord === blanksLetter.join("");
+}
 // ------------------------------
 // Score Management
 // ------------------------------
-function saveScores() {}
-function loadScores() {}
-function updateScoreDisplay() {}
+function saveScores() {
+  localStorage.setItem("winCount", winCounter);
+  localStorage.setItem("loseCounter", loseCounter);
+}
+function loadScores() {
+  localStorage.getItem("winCount");
+}
+function updateScoreDisplay() {
+  winElement.textContent = winCounter;
+  loseElement.textContent = loseCounter;
+}
 
 // ------------------------------
 // Reset Score
 // ------------------------------
-function resetGame() {}
+function resetGame() {
+  winCounter = 0;
+  loseCounter = 0;
+  saveScores();
+  updateScoreDisplay();
+}
 // ------------------------------
 // Keyboard Input
 // ------------------------------
