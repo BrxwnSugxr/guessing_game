@@ -51,10 +51,13 @@ function init() {
 // ------------------------------
 function startGame() {
   clearInterval(timer);
+
   gameActive = true;
   timerCount = 10;
+
   startButton.disabled = true;
   timerElement.textContent = timerCount;
+
   renderBlanks();
 
   startTimer();
@@ -62,11 +65,31 @@ function startGame() {
 // ------------------------------
 // Select Random Word
 // ------------------------------
-function renderBlanks() {}
+function renderBlanks() {
+  const randomIndex = Math.floor(Math.random() * words.length);
+  words.length = 7;
+  chosenWord = words[randomIndex];
+  blanksLetter = [];
+
+  for (let i = 0; i < chosenWord.length; i++) {
+    blanksLetter.push("_");
+    wordBlank.textContent = blanksLetter.join(" ");
+  }
+}
 // ------------------------------
 // Timer
 // ------------------------------
-function startTimer() {}
+function startTimer() {
+  setInterval();
+  timer = setInterval(() => {
+    clearInterval(timer);
+    timerCount--;
+    timerElement.textContent = timerCount;
+    if (timerCount <= 0) {
+      loseGame();
+    }
+  });
+}
 // ------------------------------
 // Win Game
 // ------------------------------
