@@ -18,7 +18,7 @@ const gameStatus = document.querySelector(".game-status");
 // ------------------------------
 
 let chosenWord = "";
-let blanksLetter = [];
+let blankLetters = [];
 
 let timer = null;
 let timerCount = 10;
@@ -43,7 +43,7 @@ function init() {
   loadScores();
   updateScoreDisplay();
 
-  timerElement.textContent = textContent;
+  timerElement.textContent = timerCount;
   gameStatus.textContent = "Press Start to begin!";
 }
 // ------------------------------
@@ -71,12 +71,12 @@ function startGame() {
 function renderBlanks() {
   const randomIndex = Math.floor(Math.random() * words.length);
   chosenWord = words[randomIndex];
-  blanksLetter = [];
+  blankLetters = [];
 
   for (let i = 0; i < chosenWord.length; i++) {
-    blanksLetter.push("_");
+    blankLetters.push("_");
   }
-  wordBlank.textContent = blanksLetter.join(" ");
+  wordBlank.textContent = blankLetters.join(" ");
 }
 // ------------------------------
 // Timer
@@ -120,7 +120,7 @@ function loseGame() {
   wordBlank.textContent = `GAME OVER - The word was "${chosenWord}".`;
 
   gameStatus.textContent = "Time's up!";
-  gameStatus.className = "alert alert-danger text0center game-status";
+  gameStatus.className = "alert alert-danger text-center game-status";
   startButton.disabled = false;
   saveScores();
   updateScoreDisplay();
@@ -132,12 +132,12 @@ function checkLetters(letter) {
   let letterFound = false;
   for (let i = 0; i < chosenWord.length; i++) {
     if (chosenWord[i] === letter) {
-      blanksLetter[i] = letter;
+      blankLetters[i] = letter;
       letterFound = true;
     }
   }
   if (letterFound) {
-    wordBlank.textContent = blanksLetter.join(" ");
+    wordBlank.textContent = blankLetters.join(" ");
   }
   return letterFound;
 }
@@ -145,7 +145,7 @@ function checkLetters(letter) {
 // Check Win Condition
 // ------------------------------
 function checkWin() {
-  chosenWord === blanksLetter.join("");
+  return chosenWord === blankLetters.join("");
 }
 // ------------------------------
 // Score Management
@@ -155,7 +155,12 @@ function saveScores() {
   localStorage.setItem("loseCounter", loseCounter) || 0;
 }
 function loadScores() {
-  localStorage.getItem("winCount");
+  //   localStorage.getItem("winCount");
+  const storedWin = localStorage.getItem("winCount");
+  const storedLosses = localStorage.getItem("loseCount");
+
+  winCounter = storedWin ? Number(storedWin) : 0;
+  loseCounter = storedLosses ? Number(storedLosses) : 0;
 }
 function updateScoreDisplay() {
   winElement.textContent = winCounter;
