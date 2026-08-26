@@ -5,6 +5,8 @@
 :root {
   --color-primary: #3d405b;
   --color-primary-hover: #4a4e69;
+  --color-success: #198754;
+  --color-danger: #dc3545;
   --color-header: #8a817c;
   --color-light: #eae7dc;
   --color-text: #333;
@@ -106,10 +108,16 @@ nav a {
 .quiz-box {
   width: min(90%, var(--content-width));
   padding: var(--space-lg);
-
+  text-align: center;
   background-color: var(--color-white);
   border-radius: var(--radius-md);
   box-shadow: var(--shadow);
+}
+
+.quiz-box h2 {
+  margin-bottom: var(--space-lg);
+  color: var(--color-primary);
+  line-height: 1.4;
 }
 
 h1 {
@@ -148,9 +156,22 @@ button:hover {
   display: block;
   width: 100%;
   margin-bottom: 0.625rem;
-
+  padding: 0.75rem 1rem;
   text-align: left;
 }
+
+.choice-btn.correct {
+  background-color: var(--color-success);
+}
+
+.choice-btn.wrong {
+  background-color: var(--color-danger);
+}
+.choice-btn.correct,
+.choice-btn.wrong {
+  cursor: default;
+}
+
 
 
 /* =========================
@@ -169,6 +190,16 @@ button:hover {
 
 #highscores-list {
   padding-bottom: var(--space-md);
+
+}
+
+#highscores-list li {
+  padding: var(--space-sm) var(--space-md);
+  border-bottom: 1px solid #ccc;
+}
+
+#highscores-list li:nth-child(odd) {
+  background-color: rgb(211 211 211 / 50%);
 }
 
 

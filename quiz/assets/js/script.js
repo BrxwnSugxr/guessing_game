@@ -38,15 +38,18 @@ function showNextQuestion() {
 function questionClick() {
   const correct = questions[currentQuestionIndex].answer === this.value;
 
-  if (!correct) {
+  if (correct) {
+    this.classList.add("correct");
+    displayAnswerFeedback("Correct!");
+  } else {
+    this.classList.add("wrong");
+
     time -= 10;
     time = Math.max(time, 0);
 
     timerEl.textContent = time;
 
     displayAnswerFeedback("Wrong!");
-  } else {
-    displayAnswerFeedback("Correct!");
   }
 
   currentQuestionIndex++;
@@ -105,7 +108,7 @@ function endQuiz() {
 function saveHighscore(event) {
   event.preventDefault();
 
-  let names = document.getElementById("names").value.time();
+  let names = document.getElementById("names").value.trim();
 
   if (!/^[A-Za-z-]+$/.test(names) || names === "-") {
     alert("name must contain only letters and hypnes.");
