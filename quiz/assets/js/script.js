@@ -36,6 +36,12 @@ function showNextQuestion() {
 }
 
 function questionClick() {
+  // Disable all answer buttons immediately
+  const choiceButtons = document.querySelectorAll(".choice-btn");
+
+  choiceButtons.forEach(function (button) {
+    button.disabled = true;
+  });
   const correct = questions[currentQuestionIndex].answer === this.value;
 
   if (correct) {
