@@ -2,7 +2,7 @@ let currentQuestionIndex = 0;
 let time = questions.length * 10;
 let timerId;
 
-const timerEl = document.getElementById("time");
+const timerEl = document.getElementById("timer");
 const startBtn = document.getElementById("start-quiz-btn");
 const quizBoxEl = document.querySelector(".quiz-box");
 
