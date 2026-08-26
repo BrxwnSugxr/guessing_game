@@ -14,11 +14,27 @@
     <link rel="stylesheet" href="./assets/css/style.css" />
   </head>
   <body>
-    <header></header>
+    <header>
+      <nav>
+        <ul>
+          <li><a href="highscore.html">View highscore</a></li>
+          <li id="timer">Timer Left: <span>100</span></li>
+        </ul>
+      </nav>
+    </header>
     <main>
-      <section></section>
+      <section class="quiz-box">
+        <h1>Coding Quiz</h1>
+        <p class="instructions">
+          Answer the code questions correctly within the time limit to maximie
+          your score. Each wrong answer Dedcuts 10 seconds. good luck!
+        </p>
+        <button id="start-quiz-btn">Start Quizs</button>
+      </section>
     </main>
+    <footer>2026 all rights reserved</footer>
     <!-- javascript -->
     <script src="./assets/js/script.js"></script>
+    <script src="./assets/js/questions.js"></script>
   </body>
 </html>
