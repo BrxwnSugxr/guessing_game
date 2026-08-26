@@ -1,13 +1,14 @@
-const currentQuestionIndex = 0;
-const time = questions.length * 10;
-const timerId;
+let currentQuestionIndex = 0;
+let time = questions.length * 10;
+let timerId;
 
 const timerEl = document.getElementById("time");
 const startBtn = document.getElementById("start-quiz-btn");
-const quizBoxEl = document.getElementById(".quiz-box");
+const quizBoxEl = document.querySelector(".quiz-box");
 
 function startQuiz() {
   startBtn.style.display = "none";
+  timerEl.textContent = time;
   timerId = setInterval(clockTick, 1000);
 
   showNextQuestion();
@@ -78,9 +79,8 @@ function clockTick() {
     timerEl.textContent = time;
     endQuiz();
     return;
-
-    timerEl.textContent = time;
   }
+  timerEl.textContent = time;
 }
 
 function endQuiz() {
@@ -104,4 +104,32 @@ function endQuiz() {
 
 function saveHighscore(event) {
   event.preventDefault();
+
+  let names = document.getElementById("names").value.time();
+
+  if (!/^[A-Za-z-]+$/.test(names) || names === "-") {
+    alert("name must contain only letters and hypnes.");
+    return;
+  }
+
+  names = names
+    .replace(/-+/g, "-")
+    .split("-")
+    .map(function (part) {
+      return part.charAt(0).toUpperCase() + part.slice(1).toLowerCase();
+    })
+    .join("-");
+
+  let highscores = JSON.parse(localStorage.getItem("highscores")) || [];
+
+  highscores.push({
+    initials: names,
+    score: time,
+  });
+
+  localStorage.setItem("highscores", JSON.stringify(highscores));
+
+  window.location.href = "highscores.html";
 }
+
+startBtn.onclick = startQuiz;
