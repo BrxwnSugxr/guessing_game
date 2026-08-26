@@ -1,152 +1,70 @@
-![Badge](https://img.shields.io/badge/License-MIT-yellow.svg)
-![HTML](https://img.shields.io/badge/HTML-blue)
-![Bootstrap](https://img.shields.io/badge/Bootstrap-purple)
-![CSS](https://img.shields.io/badge/CSS-red)
+# JavaScript Games
+
+![License](https://img.shields.io/badge/License-MIT-yellow.svg)
+![HTML](https://img.shields.io/badge/HTML5-orange)
+![CSS](https://img.shields.io/badge/CSS3-blue)
+![Bootstrap](https://img.shields.io/badge/Bootstrap-5-purple)
 ![JavaScript](https://img.shields.io/badge/JavaScript-yellow)
 
-<h1 align="center">Word Guess Game</h1>
+<h1 align="center">JavaScript Games</h1>
 
-A browser-based word guessing game built with HTML, Bootstrap, CSS, and JavaScript. The player must identify a randomly selected JavaScript-related word by guessing its letters before the timer reaches zero.
+A browser-based collection of interactive JavaScript games built to practise and demonstrate core front-end development concepts.
 
-The project focuses on applying core JavaScript concepts including DOM manipulation, event listeners, arrays, loops, functions, conditional logic, timers, localStorage, and application state.
+The project currently contains two games:
 
-The user interface was developed using Bootstrap to create a responsive layout while custom CSS was used to provide additional styling, accessibility features, responsive behaviour, and visual interactions.
+- **Word Guess Game**
+- **Coding Quiz**
+
+The games were developed using HTML, CSS, Bootstrap, and JavaScript, with browser Web APIs and localStorage used to provide interactive functionality and persistent game data.
+
+The project is also being developed as a learning project, with future plans to introduce external APIs and explore AI-powered voice interaction.
+
+---
 
 ## Table of Contents
 
-- [Table of Contents](#table-of-contents)
-- [User Story](#user-story)
-- [Acceptance Criteria](#acceptance-criteria)
-- [Features](#features)
-  - [Random Word Selection](#random-word-selection)
-  - [Timed Gameplay](#timed-gameplay)
-  - [Keyboard Input](#keyboard-input)
-  - [Letter Matching](#letter-matching)
-  - [Win and Loss Tracking](#win-and-loss-tracking)
-  - [Reset Score](#reset-score)
-  - [Responsive UI](#responsive-ui)
-- [Technologies Used](#technologies-used)
-  - [JavaScript Concepts Practised](#javascript-concepts-practised)
-- [Output](#output)
-- [Installation](#installation)
-- [Future Improvements](#future-improvements)
+- [JavaScript Games](#javascript-games)
+  - [Table of Contents](#table-of-contents)
+  - [Overview](#overview)
+- [Games](#games)
+  - [Word Guess Game](#word-guess-game)
+    - [Gameplay](#gameplay)
+    - [Example](#example)
+  - [Coding Quiz](#coding-quiz)
+    - [Gameplay](#gameplay-1)
+  - [Installation](#installation)
+  - [Future Improvements](#future-improvements)
 
-## User Story
-AS A user
-I WANT to play a timed word guessing game
-SO THAT I can test my knowledge and improve my JavaScript vocabulary
+---
 
+## Overview
 
-## Acceptance Criteria
-GIVEN I want to play a word guessing game
-WHEN I click the Start button
-THEN a random word is selected and displayed as a series of blanks
+This project is a collection of browser-based JavaScript games designed to practise programming fundamentals while building increasingly interactive applications.
 
-WHEN the game begins
-THEN a countdown timer starts
+The project began as a Word Guess Game and has since been expanded to include a timed Coding Quiz.
 
-WHEN I press a letter key
-THEN my guess is checked against the selected word
+The goal is to continue developing the project as JavaScript skills progress, eventually incorporating external APIs and exploring AI-powered features.
 
-WHEN the letter exists in the selected word
-THEN the corresponding blank is replaced with the correctly guessed letter
+---
 
-WHEN I correctly guess all letters in the word
-THEN I win the game and the timer stops
+# Games
 
-WHEN the timer reaches zero
-THEN I lose the game and the timer stops
+## Word Guess Game
 
-WHEN I win a game
-THEN my win count increases
+A timed word guessing game where the player attempts to identify a randomly selected JavaScript-related word before the timer reaches zero.
 
-WHEN I lose a game
-THEN my loss count increases
+### Gameplay
 
-WHEN I refresh the browser
-THEN my previous win and loss scores remain available
+1. Click the Start button.
+2. A random JavaScript-related word is selected.
+3. The word is displayed as a series of blank spaces.
+4. Enter letters using the keyboard.
+5. Correct letters are revealed.
+6. Complete the word before the timer reaches zero to win.
+7. If the timer reaches zero, the round is lost.
+8. Wins and losses are stored using localStorage.
 
-WHEN I click Reset Score
-THEN my win and loss counts are reset to zero
-
-
-## Features
-
-### Random Word Selection
-
-A random JavaScript-related word is selected when a new game begins.
-
-### Timed Gameplay
-
-Each round starts with a countdown timer. The player must guess the selected word before the timer reaches zero.
-
-### Keyboard Input
-
-The game listens for keyboard events and checks whether the pressed key is a valid alphabetic character.
-
-### Letter Matching
-
-Correctly guessed letters are revealed in their corresponding positions.
-
-For example:
-
-```text
-_ _ _ _ _ _ _ _
-
-After correctly guessing a:
-
-_ a _ _ _ _ _ _
-```
-
-### Win and Loss Tracking
-
-* The application tracks the number of games won and lost.
-* **Persistent Scores:** Win and loss scores are stored using browser localStorage, allowing the scores to remain available after refreshing the page.
-
-### Reset Score
-
-The player can reset their accumulated wins and losses back to zero.
-
-### Responsive UI
-
-Bootstrap's responsive grid system is used to ensure the application works across desktop, tablet, and mobile screen sizes.
-
-## Technologies Used
-* HTML5
-* CSS3
-* Bootstrap 5
-* JavaScript
-* Browser Web APIs
-* localStorage
-
-### JavaScript Concepts Practised
-
-This project was built to practise and demonstrate several core JavaScript concepts:
-
-* Variables (`const` and `let`)
-* Arrays and Array methods
-* `for` loops
-* Functions, parameters, and return values
-* Conditional statements and comparison operators
-* DOM selection and manipulation
-* Template literals
-* Event listeners (Keyboard events)
-* Timers (`setInterval()` and `clearInterval()`)
-* Random number generation
-* Regular expressions
-* Application state
-
-## Output
-
-When the application loads, the player is presented with the Word Guess Game interface.
-
-The player begins a round by clicking the Start button.
-
-A random JavaScript-related word is selected and represented by a series of blank spaces. A countdown timer begins at 10 seconds.
-
-The player then enters letters using their keyboard.
-
-If the selected letter exists within the word, the corresponding blank spaces are replaced with the correctly guessed letter.
+### Example
 
 ```text
 _ _ _ _ _ _ _ _
@@ -156,15 +74,111 @@ After correctly guessing letters:
 v a r _ a b l e
 ```
 
-If all letters are correctly identified before the timer reaches zero, the player wins the round.
+## Coding Quiz
 
-The application displays a winning message and increases the player's win count.
+A timed JavaScript knowledge quiz.
 
-If the timer reaches zero before the word is completed, the player loses the round. The selected word is then revealed and the loss count increases.
+Players answer a series of JavaScript-related questions before the timer reaches zero.
 
-The win and loss scores are stored using localStorage, allowing the scores to persist when the browser page is refreshed.
+### Gameplay
+Click Start Quiz.
+The countdown timer begins.
+A question and multiple-choice answers are displayed.
+Select an answer.
+Correct answers allow the player to continue.
+Incorrect answers deduct time.
+The quiz ends when all questions are completed or the timer reaches zero.
+The final score can be saved to the high-score system.
+High scores are stored using localStorage.
+Features
+Word Guess Game
+Random JavaScript-related word selection
+Timed gameplay
+Keyboard input
+Letter matching
+Win and loss tracking
+Persistent scores using localStorage
+Reset score functionality
+Responsive layout
+Coding Quiz
+Multiple-choice JavaScript questions
+Countdown timer
+Time penalties for incorrect answers
+Correct and incorrect answer feedback
+Final score calculation
+High-score storage
+High-score sorting
+Reset high scores
+Responsive layout
+Shared Application Features
+Responsive design
+Bootstrap components and utilities
+Custom CSS styling
+CSS design tokens using :root
+Browser Web APIs
+DOM manipulation
+Event-driven interactions
+Persistent browser storage
+Technologies Used
+HTML5
+CSS3
+Bootstrap 5
+JavaScript
+Browser Web APIs
+localStorage
+Git
+GitHub
+JavaScript Concepts Practised
 
-The Reset Score button allows the player to return both scores to zero.
+This project demonstrates a range of JavaScript fundamentals and browser development concepts.
+
+JavaScript Fundamentals
+let and const
+Variables
+Arrays
+Objects
+Array methods
+Functions
+Parameters
+Return values
+Conditional statements
+Comparison operators
+Logical operators
+Loops
+Template literals
+Regular expressions
+DOM Manipulation
+getElementById()
+querySelector()
+createElement()
+textContent
+innerHTML
+appendChild()
+classList
+DOM event handling
+Events
+Click events
+Keyboard events
+Form submission
+DOMContentLoaded
+Timers
+setInterval()
+clearInterval()
+setTimeout()
+Browser APIs
+localStorage
+Web APIs
+Browser event system
+Application State
+
+The games maintain application state such as:
+
+Current question
+Remaining time
+Game status
+Player score
+Wins and losses
+High scores
 
 ## Installation
 
@@ -186,17 +200,86 @@ Alternatively, the application can be deployed using GitHub Pages.
 
 ## Future Improvements
 
-Potential future improvements include:
+The current project uses a combination of Bootstrap and custom CSS.
 
-* Adding a larger word database
-* Connecting the game to a words API
-* Adding difficulty levels
-* Increasing or decreasing the timer based on difficulty
-* Tracking previously guessed letters
-* Preventing duplicate guesses
-* Adding visual feedback for correct and incorrect guesses
-* Adding sound effects
-* Adding animations
-* Adding a high-score system
-* Adding additional game modes
-* Combining the game with other JavaScript challenges into a larger Brain Teaser application
+Future improvements will focus on creating a more consistent design system across both games.
+
+Potential improvements include:
+
+Consistent colour palette
+Shared CSS variables
+Improved typography
+Consistent button styles
+Improved spacing
+Improved card design
+Better visual hierarchy
+Improved accessibility
+Improved mobile experience
+Shared navigation
+Consistent feedback states
+
+The objective is to make both games feel like part of one cohesive application.
+
+External API Integration
+
+The next stage of development will explore integrating external APIs.
+
+Potential API functionality includes:
+
+Connecting the Word Guess Game to a word API
+Expanding the available word database
+Dynamically retrieving words
+Retrieving quiz questions from an API
+Creating additional API-powered game modes
+
+This will provide practical experience with:
+
+fetch()
+REST APIs
+HTTP requests
+JSON
+Promises
+async
+await
+API error handling
+Loading states
+Failed requests
+AI and Voice Interaction
+
+A future experimental feature will explore voice interaction within the Word Guess Game.
+
+The goal is to investigate whether the player can provide guesses using their voice instead of relying entirely on keyboard input.
+
+Potential technologies to investigate include:
+
+Web Speech API
+Speech recognition
+Speech-to-text
+AI APIs
+Voice processing
+Natural language processing
+
+Potential gameplay flow:
+
+Player Speaks
+      ↓
+Speech Recognition
+      ↓
+Convert Speech to Text
+      ↓
+Identify Letter / Guess
+      ↓
+Validate Guess
+      ↓
+Update Game
+
+This feature is currently planned as an experiment.
+
+Its implementation will depend on:
+
+Browser compatibility
+API availability
+Accuracy
+Privacy considerations
+Implementation complexity
+Cost of external AI services
