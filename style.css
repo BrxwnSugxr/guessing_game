@@ -1,0 +1,73 @@
+:root {
+  --color-primary: #3d405b;
+  --color-primary-hover: #4a4e69;
+  --color-header: #8a817c;
+  --color-background: #f5f5f5;
+  --color-white: #fff;
+  --color-text: #333;
+  --shadow: 0 8px 24px rgb(0 0 0 / 10%);
+  --radius: 12px;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+html,
+body {
+  min-height: 100%;
+}
+
+body {
+  min-height: 100dvh;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+
+  color: var(--color-text);
+  background-color: var(--color-background);
+}
+
+header {
+  background-color: var(--color-primary);
+}
+
+.brand {
+  color: var(--color-white);
+  font-size: 1.25rem;
+  font-weight: 700;
+  text-decoration: none;
+}
+
+main {
+  flex: 1;
+}
+
+.game-card {
+  background-color: var(--color-white);
+  border-radius: var(--radius);
+  box-shadow: var(--shadow);
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.game-card:hover {
+  transform: translateY(-4px);
+  box-shadow: 0 12px 30px rgb(0 0 0 / 15%);
+}
+
+.game-card h2 {
+  margin-bottom: 1rem;
+  color: var(--color-primary);
+}
+
+.game-card p {
+  min-height: 48px;
+}
+
+footer {
+  color: var(--color-white);
+  text-align: center;
+  background-color: var(--color-header);
+}

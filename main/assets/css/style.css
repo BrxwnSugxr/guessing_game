@@ -104,6 +104,25 @@ header p{
         outline-offset: 3px;
    }
 
+
+.play-again {
+  display: inline-block;
+  margin-top: var(--space-md);
+  padding: 0.75rem 1.5rem;
+  border-radius: var(--radius-sm);
+  color: var(--color-white);
+  background-color: var(--color-header);
+  font-weight: 700;
+  text-decoration: none;
+  transition: background-color 0.2s ease;
+}
+
+.play-again:hover {
+  color: var(--color-white);
+  background-color: var(--color-primary-hover);
+}
+
+
 /* ------------------------------
    Game Cards
    ------------------------------ */
